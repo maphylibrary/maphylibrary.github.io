@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<!--========== PAGE CONTENT ==========-->
+<section class="g-padding-y-60--xs">
+    <div class="container-fluid">
+        <div class="col-12 col-lg-10 m-auto">
+        <div class="card-columns">
+            {% for post in paginator.posts %}
+                <div class="card">
+                    <a href="{{post.url}}"><img src="{{ "/assets/images/" | append : post.img}}" class="m-card-img" alt="{{post.title}}"></a>
+                    <div class="m-card-body">
+                        <h6><a href="{{post.url}}">{{post.title}}</a></h6>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        </div>
+        <div class="col-12 col-lg-8 m-auto">
+            {% include pagination.html %}
+        </div>
+    </div>
+</section>

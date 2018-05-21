@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<!--========== PAGE CONTENT ==========-->
+<section class="g-padding-y-60--xs">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="m-wrapper">
+          <div class="m-blog-title">
+            <h4>{{page.title}}</h4>
+            <p class="text-muted text-uppercase text-right">{{ page.date | date: '%B %d, %Y' }}</p>
+          </div>
+          <div class="row mb-4">
+            <div class="col-md-4 p-1 text-center">
+              <img src="{{ "/assets/images/" | append : page.img}}" class="img-fluid" alt="{{page.title}}">
+            </div>
+            <div class="col-md-8 p-1">
+              <p><b>Author:</b> {{page.bookauthor}}</p>
+              <p><b>Year:</b> {{page.bookyear}}</p>
+              <p><b>Publisher:</b> {{page.bookpublisher}}</p>
+              <p><b>Pages:</b> {{page.bookpages}} pages</p>
+              <p><b>File Format:</b> {{page.fileformat}}</p>
+            </div>
+          </div>
+          <div class="m-content">
+            {{page.content}}
+          </div>
+          <div class="m-blog-share">
+            <ul class="m-social-media m-blog-share-nav">
+              <li><p>Share on :</p></li>
+              <li><a href='https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}' rel='nofollow' target='_blank'><i class="fab fa-twitter"></i></a></li>
+              <li><a class="m-twitter" href='https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}' rel='nofollow' target='_blank'><i class="fab fa-facebook-f"></i></a></li>
+              <li><a class="m-google-plus" href='https://plus.google.com/share?url={{ site.url }}{{ page.url }}' rel='nofollow' target='_blank'><i class="fab fa-google-plus-g"></i></a></li>
+            </ul>
+          </div>
+          <div class="clearfix"></div>
+
+          {% include disqus.html %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
